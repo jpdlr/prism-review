@@ -1,0 +1,62 @@
+{
+  "name": "prism-review",
+  "version": "0.1.0",
+  "description": "AI-powered code review assistant for GitHub PRs - provides structured summaries, risk assessment, and test coverage analysis",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "prism": "dist/index.js",
+    "prism-review": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "typecheck": "tsc --noEmit",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "code-review",
+    "github",
+    "ai",
+    "pull-request",
+    "cli",
+    "anthropic",
+    "claude"
+  ],
+  "author": "jpdlr",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpdlr/prism-review.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jpdlr/prism-review/issues"
+  },
+  "homepage": "https://github.com/jpdlr/prism-review#readme",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@octokit/rest": "^21.0.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "conf": "^13.0.0",
+    "ora": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
